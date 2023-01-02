@@ -2,9 +2,7 @@
 # Licensed under the MIT License.
 
 variables:
-- ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
-    # 'main' branch: PRD environment
-    - template: ../../config-infra-prod.yml
+
 - ${{ if ne(variables['Build.SourceBranchName'], 'main') }}:  
     # 'develop' or feature branches: DEV environment
     - template: ../../config-infra-dev.yml
